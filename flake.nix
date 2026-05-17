@@ -14,39 +14,16 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            (pkgs.python3.withPackages (ps: with pkgs.python3Packages; [
-              # Core
-              jupyterlite-core
-              jupyterlab
-              
-              # Kernels
-              jupyterlite-pyodide-kernel
-              jupyterlite-javascript-kernel
-              
-              # Dependencies mapped from requirements.txt
-              ipywidgets
-              ipyevents
-              ipympl
-              ipycanvas
-              ipyleaflet
-              plotly
-              bqplot
-              matplotlib
-              numpy
-              pillow
-              scipy
-              scikit-image
-              scikit-learn
-              pandas
-              sympy
-              tornado
-              requests
-              psutil
-            ]))
+            pkgs.python3
+            pkgs.python3.pkgs.pip
+            pkgs.python3.pkgs.virtualenv
             pkgs.nodejs_20
           ];
 
           shellHook = ''
+            python -m venv .venv
+            source .venv/bin/activate
+            pip install -r requirements.txt
             echo "JupyterLite environment ready!"
             echo "Run 'jupyter lite build --contents content --output-dir dist' to build."
             echo "Run 'jupyter lite serve --contents content --output-dir dist' to serve locally."
