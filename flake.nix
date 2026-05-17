@@ -1,5 +1,5 @@
 {
-  description = "JupyterLite environment for notebooks";
+  description = "JupyterLite & Marimo environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -14,19 +14,18 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            pkgs.python3
-            pkgs.python3.pkgs.pip
-            pkgs.python3.pkgs.virtualenv
+            pkgs.uv
+            pkgs.python311
             pkgs.nodejs_20
           ];
 
           shellHook = ''
-            python -m venv .venv
-            source .venv/bin/activate
-            pip install -r requirements.txt
-            echo "JupyterLite environment ready!"
-            echo "Run 'jupyter lite build --contents content --output-dir dist' to build."
-            echo "Run 'jupyter lite serve --contents content --output-dir dist' to serve locally."
+            export UV_PROJECT_ENVIRONMENT=$PWD/.venv
+            if [ ! -d .venv ]; then
+              uv venv
+              uv pip install -r requirements.txt
+            fi
+            echo "Environment ready! Use 'uv run marimo ...' or 'uv run jupyter lite ...'"
           '';
         };
       }

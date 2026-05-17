@@ -57,5 +57,8 @@ psutil
 requests
 sympy
 tinyik
-tornadowigglystuff
+tornado
+
+wigglystuff
 polars
+marimo>=0.10.0
