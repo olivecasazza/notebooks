@@ -31,13 +31,8 @@ jobs:
       - name: Build marimo WASM app
         run: |
           uv pip install --system -r requirements.txt
-          mkdir -p dist/notebooks
-          marimo export html-wasm content/pyodide/wigglystuff/parallelcoords.py -o dist/notebooks/parallelcoords.html --mode run --no-show-code
-          marimo export html-wasm content/pyodide/wigglystuff/treemap.py -o dist/notebooks/treemap.html --mode run --no-show-code
-          marimo export html-wasm content/pyodide/wigglystuff/polynomials.py -o dist/notebooks/polynomials.html --mode run --no-show-code
-          # Convert existing jupyter notebooks if needed or just provide a basic index
+          python scripts/build_marimo_exports.py
           cp README.md dist/index.md || true
-          # Build jupyterlite as fallback/primary if you still want it:
           jupyter lite build --contents content --output-dir dist/jupyterlite
 
       - name: Upload artifact

@@ -1,7 +1,11 @@
 import marimo
 
 __generated_with = "0.23.6"
-app = marimo.App()
+app = marimo.App(
+    width="full",
+    app_title="Parallel Coordinates",
+    css_file="content/pyodide/wigglystuff/theme.css",
+)
 
 
 @app.cell
