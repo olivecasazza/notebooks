@@ -1,5 +1,5 @@
 {
-  description = "JupyterLite & Marimo environment";
+  description = "Marimo notebook publishing environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -25,7 +25,7 @@
               uv venv
               uv pip install -r requirements.txt
             fi
-            echo "Environment ready! Use 'uv run marimo ...' or 'uv run jupyter lite ...'"
+            echo "Environment ready! Use 'uv run marimo ...' or 'python scripts/build_marimo_exports.py'"
           '';
         };
       }

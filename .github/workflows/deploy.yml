@@ -28,12 +28,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Build marimo WASM app
+      - name: Build marimo WASM apps
         run: |
           uv pip install --system -r requirements.txt
           python scripts/build_marimo_exports.py
-          cp README.md dist/index.md || true
-          jupyter lite build --contents content --output-dir dist/jupyterlite
+          cp README.md dist/index.md
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
