@@ -32,75 +32,7 @@ NOTEBOOKS = {
 }
 
 INFO_THEME_CSS = r'''
-<style>
-:root {
-  --slate-950: #000000;
-  --slate-900: #000000;
-  --slate-800: #000000;
-  --slate-700: #1a1a1a;
-  --slate-600: #333333;
-  --slate-500: #4d4d4d;
-  --slate-300: #b3b3b3;
-  --slate-200: #cccccc;
-  --pink-400: #ff3399;
-  --pink-300: #ff3399;
-  --cyan-300: #0099ff;
-}
-html, body {
-  background: transparent !important;
-  color: var(--slate-300) !important;
-  font-family: 'Courier New', Courier, monospace !important;
-}
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-body, #root,
-main,
-[data-testid="app-container"],
-[data-testid="read-mode-root"],
-[data-testid="notebook-container"],
-[data-testid="page"] {
-  background: transparent !important;
-}
-main,
-[data-testid="notebook-container"],
-[data-testid="read-mode-root"] {
-  max-width: 42rem !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-body, h1, h2, h3, h4, h5, h6, p, li, span, label, div {
-  color: var(--slate-300) !important;
-  font-family: 'Courier New', Courier, monospace !important;
-}
-a { color: var(--pink-300) !important; text-decoration: underline !important; text-underline-offset: 2px !important; }
-a:hover { color: var(--cyan-300) !important; text-decoration: underline !important; text-underline-offset: 2px !important; }
-.marimo-cell,
-[data-testid="cell"] {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin-bottom: 2rem !important;
-}
-[data-testid="output-area"],
-[data-testid="cell-output"] {
-  background: transparent !important;
-}
-button { border-radius: 0 !important; font-family: 'Courier New', Courier, monospace !important; }
-code, pre {
-  background: rgba(51, 51, 51, 0.5) !important;
-  font-family: 'Courier New', Courier, monospace !important;
-}
-.card {
-  border-radius: 0 !important;
-  border: 1px solid #333 !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-}
-</style>
+<link rel="stylesheet" href="https://olive.casazza.info/notebook-theme.css">
 '''
 
 
