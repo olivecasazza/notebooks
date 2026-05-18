@@ -47,9 +47,7 @@ INFO_THEME_CSS = r'''
   --cyan-300: #67e8f9;
 }
 html, body {
-  background:
-    radial-gradient(circle at top, rgba(244, 114, 182, 0.08), transparent 30%),
-    linear-gradient(180deg, #09090b 0%, #111114 100%) !important;
+  background: transparent !important;
   color: var(--slate-200) !important;
 }
 body, #root,
