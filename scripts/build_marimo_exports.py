@@ -51,6 +51,10 @@ html, body {
   color: var(--slate-300) !important;
   font-family: 'Courier New', Courier, monospace !important;
 }
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 body, #root,
 main,
 [data-testid="app-container"],
@@ -58,6 +62,13 @@ main,
 [data-testid="notebook-container"],
 [data-testid="page"] {
   background: transparent !important;
+}
+main,
+[data-testid="notebook-container"],
+[data-testid="read-mode-root"] {
+  max-width: 42rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 body, h1, h2, h3, h4, h5, h6, p, li, span, label, div {
   color: var(--slate-300) !important;
