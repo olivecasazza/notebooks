@@ -28,8 +28,8 @@ def _(mo):
 
 @app.cell
 async def _():
-    import piplite
-    await piplite.install(['wigglystuff', 'polars', 'scikit-learn'])
+    import micropip
+    await micropip.install(['wigglystuff', 'polars', 'scikit-learn'])
 
     from sklearn.datasets import load_iris
     from wigglystuff import ParallelCoordinates

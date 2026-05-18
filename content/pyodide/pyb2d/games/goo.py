@@ -15,9 +15,9 @@ def _():
 async def _():
     import sys
     if "pyodide" in sys.modules:
-        import piplite
-        await piplite.install('networkx')
-        await piplite.install('pyb2d-jupyterlite-backend>=0.4.2')
+        import micropip
+        await micropip.install('networkx')
+        await micropip.install('pyb2d-jupyterlite-backend>=0.4.2')
     return
 
 

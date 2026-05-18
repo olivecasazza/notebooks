@@ -30,8 +30,8 @@ def _(mo):
 
 @app.cell
 async def _():
-    import piplite
-    await piplite.install(['wigglystuff', 'matplotlib', 'numpy'])
+    import micropip
+    await micropip.install(['wigglystuff', 'matplotlib', 'numpy'])
 
     import numpy as np
     import matplotlib.pyplot as plt

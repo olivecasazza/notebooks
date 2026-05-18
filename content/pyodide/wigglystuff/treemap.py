@@ -32,8 +32,8 @@ def _(mo):
 
 @app.cell
 async def _():
-    import piplite
-    await piplite.install(['wigglystuff', 'polars'])
+    import micropip
+    await micropip.install(['wigglystuff', 'polars'])
 
     from wigglystuff import Treemap
 
