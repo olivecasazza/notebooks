@@ -19,6 +19,8 @@ NOTEBOOKS = {
     "parallelcoords": ROOT / "content/pyodide/wigglystuff/parallelcoords.py",
     "treemap": ROOT / "content/pyodide/wigglystuff/treemap.py",
     "polynomials": ROOT / "content/pyodide/wigglystuff/polynomials.py",
+    "kinematics": ROOT / "content/SDSU-CS556-Workspace/a4/p4.py",
+    "inverse-kinematic-approximations": ROOT / "content/SDSU-CS556-Workspace/a3/Assignment 3, Part 2.py",
     "pyb2d-tutorial": ROOT / "content/pyodide/pyb2d/0_tutorial.py",
     "pyb2d-color-mixing": ROOT / "content/pyodide/pyb2d/color_mixing.py",
     "pyb2d-angry-shapes": ROOT / "content/pyodide/pyb2d/games/angry_shapes.py",
