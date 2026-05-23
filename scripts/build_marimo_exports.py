@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import shutil
 import subprocess
 from pathlib import Path
 from html import escape
@@ -50,6 +51,16 @@ def export_notebook(source: Path, output: Path) -> None:
         check=True,
         cwd=ROOT,
     )
+
+
+def copy_notebook_assets(source: Path) -> None:
+    source_dir = source.parent
+    for asset_dir_name in ("fig", "img", "images", "assets"):
+        asset_dir = source_dir / asset_dir_name
+        if not asset_dir.exists():
+            continue
+        destination = DIST / asset_dir_name
+        shutil.copytree(asset_dir, destination, dirs_exist_ok=True)
 
 
 def patch_html(output: Path) -> None:
@@ -126,6 +137,7 @@ def main() -> None:
     for name, source in NOTEBOOKS.items():
         output = DIST / f"{name}.html"
         export_notebook(source, output)
+        copy_notebook_assets(source)
         patch_html(output)
     write_index()
 
