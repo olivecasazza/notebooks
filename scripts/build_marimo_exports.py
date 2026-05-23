@@ -46,7 +46,7 @@ def export_notebook(source: Path, output: Path) -> None:
             str(output),
             "--mode",
             "run",
-            "--no-show-code",
+            "--show-code",
         ],
         check=True,
         cwd=ROOT,
